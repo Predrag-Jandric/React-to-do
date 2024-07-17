@@ -1,4 +1,7 @@
 import { useState } from "react";
+import Item from "./componets/Item";
+import Form from "./componets/Form";
+import Footer from "./componets/Footer";
 
 const initialTasks = [
   { taskName: "Do laundry", desc: "go to the bathroom and do it", id: 645769 },
@@ -43,7 +46,7 @@ export default function App() {
         setTaskName={setTaskName}
         setTaskTextArea={setTaskTextArea}
       />
-      <main>
+      <ul>
         {tasks.map((task) => (
           <Item
             taskName={task.taskName}
@@ -53,44 +56,9 @@ export default function App() {
             id={task.id}
           />
         ))}
-      </main>
+      </ul>
+      <Footer tasks={tasks} />
     </div>
-  );
-}
-
-function Item({ taskName, desc, handleDeleteItem, id }) {
-  return (
-    <div className="item">
-      <h2>{taskName}</h2>
-      <p>{desc}</p>
-      <button onClick={() => handleDeleteItem(id)}>Delete</button>
-    </div>
-  );
-}
-
-function Form({
-  taskName,
-  setTaskName,
-  taskTextArea,
-  setTaskTextArea,
-  handleSubmitForm,
-}) {
-  return (
-    <form onSubmit={handleSubmitForm}>
-      <input
-        type="text"
-        value={taskName}
-        placeholder="Task name"
-        onChange={(e) => setTaskName(e.target.value)}
-      />
-      <textarea
-        type="text"
-        value={taskTextArea}
-        placeholder="Task description"
-        onChange={(e) => setTaskTextArea(e.target.value)}
-      />
-      <button type="submit">Add task</button>
-    </form>
   );
 }
 
