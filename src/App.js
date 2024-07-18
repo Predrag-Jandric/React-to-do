@@ -61,7 +61,3 @@ export default function App() {
     </div>
   );
 }
-
-// tasks
-// 1. Make local storage
-// 2. Use a Single State for Form Inputs
