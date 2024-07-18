@@ -6,7 +6,7 @@ export default function Form({
   handleSubmitForm,
 }) {
   return (
-    <form onSubmit={handleSubmitForm}>
+    <form className="form" onSubmit={handleSubmitForm}>
       <input
         type="text"
         value={taskName}

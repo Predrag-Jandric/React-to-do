@@ -3,11 +3,11 @@ export default function Footer({ tasks }) {
     tasks.length === 0
       ? "You have no tasks"
       : tasks.length === 1
-      ? "You have one task"
+      ? "You have 1 task"
       : `You have ${tasks.length} tasks`;
 
   return (
-    <div>
+    <div className="footer">
       <p>{taskNum}</p>
     </div>
   );

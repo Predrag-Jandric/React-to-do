@@ -4,7 +4,7 @@ import Form from "./componets/Form";
 import Footer from "./componets/Footer";
 
 const initialTasks = [
-  { taskName: "Do laundry", desc: "go to the bathroom and do it", id: 645769 },
+  { taskName: "Do laundry", desc: "Go to the bathroom and do it", id: 645769 },
   // {
   //   taskName: "Dry clothes",
   //   desc: "put the clothes into the drying machine",
@@ -46,7 +46,7 @@ export default function App() {
         setTaskName={setTaskName}
         setTaskTextArea={setTaskTextArea}
       />
-      <ul>
+      <ul className="task-list">
         {tasks.map((task) => (
           <Item
             taskName={task.taskName}
@@ -65,4 +65,3 @@ export default function App() {
 // tasks
 // 1. Make local storage
 // 2. Use a Single State for Form Inputs
-// 3. Extract Components to Separate Files
